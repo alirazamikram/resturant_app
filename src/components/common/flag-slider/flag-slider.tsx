@@ -9,14 +9,19 @@ import "swiper/css/pagination";
 // import required modules
 import { EffectCoverflow, Pagination } from "swiper/modules";
 
-export const FamilyMemberSlider = () => {
+export const FlagSlider = () => {
   return (
-    <>
+    <div className="my-10">
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
         slidesPerView={"auto"}
+        breakpoints={{
+          1400: {
+            slidesPerView: 5,
+          },
+        }}
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
@@ -24,7 +29,7 @@ export const FamilyMemberSlider = () => {
           modifier: 1,
           slideShadows: true,
         }}
-        pagination={true}
+        pagination={false}
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
@@ -92,6 +97,6 @@ export const FamilyMemberSlider = () => {
           />
         </SwiperSlide>
       </Swiper>
-    </>
+    </div>
   );
 };
